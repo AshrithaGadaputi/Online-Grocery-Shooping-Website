@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title>
+            
+            Shopping Cart
+        
+        </title>
+
+		<link rel ="stylesheet" type="text/css" href="css/Shopping Cart CSS.css">
+
+		<script src="https://kit.fontawesome.com/9088cc6401.js" crossorigin="anonymous"></script>
+
+	</head>
+
+    <body>
+
+        <div class="container">
+
+            <h1>
+                
+                Shopping Cart
+            
+            </h1>
+            
+            <div class="cart">
+                
+                
+                <div class="products">
+                    
+                    <% for(var i=0; i<addedList.length; i++) { %>
+
+                    <div class="product">
+
+                        <img src=<%= addedList[i].imageurl %>>
+
+                        <div class="product-info">
+
+                            <h3 class="product-name">
+                                
+                                <%= addedList[i].name %>
+                            
+                            </h3>
+
+                            <h4 class="product-price">
+                                
+                               <%= addedList[i].price %>
+                            
+                            </h4>
+
+                            <p class="product-quantity">
+                                
+                                Qnt: 
+                                
+                                <input name=<%= addedList.name %>>
+                            
+                            </p>
+
+                        </div>
+
+                    </div>
+                <% } %>
+                </div>
+                <div>
+                    
+                    <form action="/newpage" method="post">
+                        <button name="submit_button"  href="newpage" class="cart-btn" style = 'text-decoration: none;'>
+                            <i class="fas fa-shopping-bag"></i> Proceed to checkout
+                        </button>
+                        </form>
+                        
+                        <form action="/homepage" method="post">
+                            <button name="submit_button"  href="homepage" class="cart-btn" style = 'text-decoration: none;'>
+                                <i class="fas fa-shopping-bag"></i> Add more items
+                            </button>
+                            </form>
+
+                    
+                </div>
+                
+            </div>
+
+    </body>
+
+</html>

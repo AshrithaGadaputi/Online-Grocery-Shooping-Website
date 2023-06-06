@@ -1,0 +1,30 @@
+<%- include('partials/header2') %>
+        <section id="popular-product">
+            <!--heading----------->
+            <div class="product-heading">
+                <h2 class = 'fruits-heading'>Fruits and Vegetables</h2>
+            </div>
+            <!--box-container------>
+            <div class="product-container">
+                <!--box---------->
+                <% for(var i = 0; i<fruitList.length; i++) { %>
+                <div class="product-box">
+                    <img alt=<%= fruitList[i].name %> src=<%= fruitList[i].imageurl %>>
+                    <strong><%= fruitList[i].name %></strong>
+                    <span class="quantity">Quantity : <%= fruitList[i].stock %></span>
+                    <span class="price">Rs. <%= fruitList[i].price %></span>
+                    <!--cart-btn------->
+                    <form action="/ShoppingCartHTML" method="post">
+                    <button name="submit_button" value=<%= fruitList[i].name %> href="ShoppingCartHTML" class="cart-btn" style = 'text-decoration: none;'>
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                    </form>
+                    <!--like-btn------->
+                    <a class="like-btn" style = 'text-decoration: none;'>
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                <% } %>
+            </div>
+        </section>
+<%- include('partials/footer2') %>
